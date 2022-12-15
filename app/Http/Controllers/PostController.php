@@ -46,7 +46,8 @@ class PostController extends Controller
             'as_fence'          => (!$request->as_fence) ? 0 : $request->as_fence,
             'as_driveway'       => (!$request->as_driveway) ? 0 : $request->as_driveway,
             'as_lat'            => $request->as_lat,
-            'as_lng'            => $request->as_lng
+            'as_lng'            => $request->as_lng,
+            'as_img'            => $request->as_img
         ]);
         
 

@@ -54,6 +54,7 @@
             </div>
             <!--end:Menu item-->
             <!--begin:Menu item-->
+            @if(Session::get('worker_role') == 1)
             <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                 <!--begin:Menu link-->
                 <span class="menu-link">
@@ -98,6 +99,7 @@
                 </div>
                 <!--end:Menu sub-->
             </div>
+            @endif
             <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                 <!--begin:Menu link-->
                 <span class="menu-link">
@@ -128,6 +130,7 @@
                         </a>
                         <!--end:Menu link-->
                     </div>
+                    @if(Session::get('worker_role') == 1)
                     <div class="menu-item">
                         <!--begin:Menu link-->
                         <a class="menu-link" href="/assign-task">
@@ -138,6 +141,7 @@
                         </a>
                         <!--end:Menu link-->
                     </div>
+                    @endif
                     <!--end:Menu item-->
                 </div>
                 <!--end:Menu sub-->

@@ -34,6 +34,7 @@ class CreateAssignmentsTable extends Migration
             $table->tinyInteger('as_driveway')->default(0);
             $table->string('as_lat')->nullable();
             $table->string('as_lng')->nullable();
+            $table->string('as_img')->nullable();
         });
     }
 

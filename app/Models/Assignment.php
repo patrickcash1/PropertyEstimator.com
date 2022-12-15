@@ -33,6 +33,7 @@ class Assignment extends Model
         'as_fence',
         'as_driveway',
         'as_lat',
-        'as_lng'
+        'as_lng',
+        'as_img'
     ];
 }

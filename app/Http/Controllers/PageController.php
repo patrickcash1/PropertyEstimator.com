@@ -14,7 +14,11 @@ class PageController extends Controller
      * @return \Illuminate\View\View
      */
     public function workerslist()
-    {
+    { 
+
+        if(!$this->checkPermissions())
+            return back()->with('jsAlert', 'Sorry! You are not allowed to access that desired page.');
+
         $workers = DB::table('users')
                     ->get();
 
@@ -32,6 +36,9 @@ class PageController extends Controller
      */
     public function assigntask()
     {
+        if(!$this->checkPermissions())
+            return back()->with('jsAlert', 'Sorry! You are not allowed to access that desired page.');
+
         $workers = DB::table('users')
                     ->where('role', '=', 0)
                     ->get();
@@ -89,7 +96,14 @@ class PageController extends Controller
      */
     public function taskslist()
     {   
-        $tasks = Assignment::whereIn('as_status', array(0,1))->get();
+        if(session()->get('worker_role') < 1){
+        $tasks = Assignment::whereIn('as_status', array(0,1))
+                            ->where('as_worker_id',session()->get('worker_id'))
+                            ->get();
+        }
+        else{
+            $tasks = Assignment::whereIn('as_status', array(0,1))->get();
+        }
 
         $data  = array(
             'tasks'     => $tasks
@@ -105,8 +119,12 @@ class PageController extends Controller
      */
     public function measurementslist()
     {   
-        $measurements = Measurement::where('mms_status', 0)->get();
-
+        if(session()->get('worker_role') < 1){
+            $measurements = Measurement::where('mms_entered_by_user', session()->get('worker_id'))->get();
+        }
+        else{
+            $measurements = Measurement::where('mms_status', 0)->get();
+        }
         $data  = array(
             'measurements'     => $measurements
         );
@@ -121,11 +139,20 @@ class PageController extends Controller
      */
     public function reports()
     {
+        if(!$this->checkPermissions())
+            return back()->with('jsAlert', 'Sorry! You are not allowed to access that desired page.');
+
         $data  = array(
             'timerLogs'     => false,
             'sdate'         => date("Y-m-d", strtotime('yesterday')),
             'edate'         => date("Y-m-d")
         );
         return view('pages.reports')->with($data);
+    }
+
+    public function checkPermissions(){
+        if(session()->get('worker_role') < 1)
+            return false;
+        return true;
     }
 }
