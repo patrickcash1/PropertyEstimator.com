@@ -142,6 +142,16 @@ View Task
       <div class="col-12 mb-10">
         <div class="rounded border d-flex flex-column p-10">
             <label for="" class="form-label">Comments / Instructions</label>
+            <label for="as_img" class="form-label">Property High Resolution Image</label>
+            <br />
+            <a target="_blank" href="{{$task->as_img}}"><img id="assignedPictureImg" style="max-width:600px" src="{{$task->as_img}}" class="card-img-top mb-3" alt="..."></a>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-12 mb-10">
+        <div class="rounded border d-flex flex-column p-10">
+            <label for="" class="form-label">Comments / Instructions</label>
             <textarea disabled="" readonly="" class="form-control form-control form-control-solid" name="as_comments" data-kt-autosize="true">{{ $task->as_comments }}</textarea>
         </div>
       </div>

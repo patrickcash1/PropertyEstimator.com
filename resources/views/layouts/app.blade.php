@@ -135,6 +135,7 @@ License: For each use you must have a valid license purchased only from above li
         <script src="{{ asset('keen') }}/js/scripts.bundle.js"></script>
         <script src="{{ asset('keen') }}/js/general.js"></script>
         <!--end::Global Javascript Bundle-->
+        @stack('js')
     </body>
     <!--end::Body-->
 </html>

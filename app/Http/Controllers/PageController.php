@@ -62,6 +62,11 @@ class PageController extends Controller
         $workers = DB::table('users')
                     ->where('role', '=', 0)
                     ->get();
+                    
+        if(empty($task->as_img))
+            $task->as_img = "/keen/media/img_not_found.png/";
+        else
+            $task->as_img = "/uploaded_file/".$task->as_img;
 
         $data  = array(
             'workers'   => $workers,
