@@ -30,7 +30,7 @@ class HomeController extends Controller
                 ->join('users', 'users.id', '=', 'measurements.mms_entered_by_user')
                 ->select('name', DB::raw('COUNT(*) as totalMeasurement'), DB::raw('(COUNT(*) * 0.2) as totalCost'))
                 ->where('mms_entered_by_user',session()->get('worker_id'))
-                ->groupBy('measurements.mms_entered_by_user')
+                ->groupBy('measurements.mms_entered_by_user, users.name')
                 ->get();
         }
         else{
@@ -38,7 +38,7 @@ class HomeController extends Controller
             $allWorkers = DB::table('measurements')
                 ->join('users', 'users.id', '=', 'measurements.mms_entered_by_user')
                 ->select('name', DB::raw('COUNT(*) as totalMeasurement'), DB::raw('(COUNT(*) * 0.2) as totalCost'))
-                ->groupBy('measurements.mms_entered_by_user')
+                ->groupBy('measurements.mms_entered_by_user, users.name')
                 ->get();
         }
 
