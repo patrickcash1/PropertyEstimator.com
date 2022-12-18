@@ -75,43 +75,188 @@ Add Property Measurement
       </div>
     </div>
     <div class="row mb-6">
-      <div class="col-1 mb-10">
+      <div class="col-3 mb-10">
+        <label for="mms_property_size" class="form-label">Property Size</label>
+        <div class="input-group">
+          <input type="number" name="mms_property_size" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_property_size_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mb-10">
+        <label for="mms_house_size" class="form-label">House Size</label>
+        <div class="input-group">
+          <input type="number" name="mms_house_size" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_house_size_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mb-10">
+        <label for="mms_paved_area" class="form-label">Paved Areas</label>
+        <div class="input-group">
+          <input type="number" name="mms_paved_area" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_paved_area_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mb-10">
+        <label for="mms_planting_area" class="form-label">Planting Areas</label>
+        <div class="input-group">
+          <input type="number" name="mms_planting_area" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_planting_area_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-3 mb-10">
         <label for="mms_lawn_area" class="form-label">Lawn Area</label>
-        <input type="number" name="mms_lawn_area" class="form-control form-control-solid" />
+        <div class="input-group">
+          <input type="number" name="mms_lawn_area" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_lawn_area_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="col-1 mb-10">
+      <div class="col-3 mb-10">
         <label for="mms_roof_area" class="form-label">Roof Area</label>
-        <input type="number" name="mms_roof_area" class="form-control form-control-solid" />
+        <div class="input-group">
+          <input type="number" name="mms_roof_area" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_roof_area_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="col-1 mb-10">
-        <label for="mms_roof_pitch" class="form-label">Roof Pitch</label>
-        <input type="number" name="mms_roof_pitch" class="form-control form-control-solid" />
+      <div class="col-3 mb-10">
+        <label for="mms_roof_perimeter" class="form-label">Roof Perimeter</label>
+        <div class="input-group">
+          <input type="number" name="mms_roof_perimeter" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_roof_perimeter_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mb-10">
+        <label for="mms_driveway_area" class="form-label">Driveway / Walkway Area</label>
+        <div class="input-group">
+          <input type="number" name="mms_driveway_area" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_driveway_area_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-3 mb-10">
+        <label for="mms_front_width" class="form-label">Front width of House</label>
+        <div class="input-group">
+          <input type="number" name="mms_front_width" class="form-control"/>
+          <div class="input-group-text p-0">
+            <select name="mms_front_width_unit" class="form-select form-select-solid">
+              <option value="1">Sq. Feet</option>
+              <option value="0">Sq. Meter</option>
+            </select>
+          </div>
+        </div>
       </div>
       <div class="col-2 mb-10">
-        <label for="mms_roof_perimeter" class="form-label">Roof Perimeter</label>
-        <input type="number" name="mms_roof_perimeter" class="form-control form-control-solid" />
+        <label for="mms_roof_pitch" class="form-label">Roof Pitch</label>
+        <select name="mms_roof_pitch" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Roof Pitch">
+          <option value="1">1/12</option>
+          <option value="2">2/12</option>
+          <option value="3">3/12</option>
+          <option value="4">4/12</option>
+          <option value="5">5/12</option>
+          <option value="6">6/12</option>
+          <option value="7">7/12</option>
+          <option value="8">8/12</option>
+          <option value="9">9/12</option>
+          <option value="10">10/12</option>
+          <option value="11">11/12</option>
+          <option value="12">12/12</option>
+          <option value="13">13/12</option>
+          <option value="14">14/12</option>
+          <option value="15">15/12</option>
+          <option value="16">16/12</option>
+          <option value="17">17/12</option>
+          <option value="18">18/12</option>
+        </select>
       </div>
-      <div class="col-1 mb-10">
+      <div class="col-2 mb-10">
         <label for="mms_fence" class="form-label">Fence</label>
         <select name="mms_fence" class="form-select form-select-solid">
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
       </div>
-      <div class="col-3 mb-10">
-        <label for="mms_driveway_area" class="form-label">Driveway / Walkway Area</label>
-        <input type="number" name="mms_driveway_area" class="form-control form-control-solid" />
-      </div>
-      <div class="col-3 mb-10">
+      <div class="col-2 mb-10">
         <label for="mms_stories_num" class="form-label">Number of Stories</label>
-        <input type="number" name="mms_stories_num" class="form-control form-control-solid" />
+        <select name="mms_stories_num" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Stories">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </div>
     </div>
     <div class="row mb-6">
-      <div class="col-12 mb-10">
-        <label for="mms_image" class="form-label">Property High Resolution Image</label>
+      <div class="col-4 mb-10">
+        <label for="mms_image_front" class="form-label">Front / Curbside View Image</label>
         <br />
-        <img id="measuredPictureImg" style="width:300px" src="{{ asset('keen') }}/media/img_not_found.png" class="card-img-top mb-3" alt="...">
+        <img id="frontPictureImg" src="{{ asset('keen') }}/media/img_not_found.png" class="card-img-top mb-3" alt="...">
+        <div class="spinner-border text-primary loadingAnimation mt-3 mb-3" role="status" style="display: block; margin-left: auto; margin-right: auto;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <input type="hidden" id="frontPictureId" name="frontPictureId" value="" />
+        <div class="uploadFileContainer" style="display: none;">
+            <input type="file" class="front-upload-pond" name="uploaded_file" />
+        </div>
+      </div>
+      <div class="col-4 mb-10">
+        <label for="mms_image_satellite" class="form-label">Satellite View Image</label>
+        <br />
+        <img id="satellitePictureImg" src="{{ asset('keen') }}/media/img_not_found.png" class="card-img-top mb-3" alt="...">
+        <div class="spinner-border text-primary loadingAnimation mt-3 mb-3" role="status" style="display: block; margin-left: auto; margin-right: auto;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <input type="hidden" id="satellitePictureId" name="satellitePictureId" value="" />
+        <div class="uploadFileContainer" style="display: none;">
+            <input type="file" class="satellite-upload-pond" name="uploaded_file" />
+        </div>
+      </div>
+      <div class="col-4 mb-10">
+        <label for="mms_image_measured" class="form-label">Measurement Snapshot</label>
+        <br />
+        <img id="measuredPictureImg" src="{{ asset('keen') }}/media/img_not_found.png" class="card-img-top mb-3" alt="...">
         <div class="spinner-border text-primary loadingAnimation mt-3 mb-3" role="status" style="display: block; margin-left: auto; margin-right: auto;">
             <span class="sr-only">Loading...</span>
         </div>

@@ -32,7 +32,7 @@ Measurements List
               </svg>
             </span>
             <!--end::Svg Icon-->
-            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Tasks" />
+            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Measurements" />
           </div>
           <!--end::Search-->
         </div>
@@ -133,14 +133,21 @@ Measurements List
                     </th>
                     <th>ID</th>
                     <th>Address</th>
+                    <th>Property Size</th>
+                    <th>House Size</th>
+                    <th>Paved Areas</th>
+                    <th>Planting Areas</th>
                     <th>Lawn Area</th>
                     <th>Roof Area</th>
                     <th>Roof Pitch</th>
                     <th>Roof Perimeter</th>
-                    <th>Driveway / Walkway</th>
+                    <th>Driveway</th>
                     <th>Fence</th>
-                    <th>Number of Stories</th>
-                    <th>Property Image</th>
+                    <th>Front Width</th>
+                    <th>Stories</th>
+                    <th>Front Image</th>
+                    <th>Satellite Image</th>
+                    <th>Measured Image</th>
                     <th>Measured By</th>
                     <th>Measured On</th>
                   </tr>
@@ -155,11 +162,16 @@ Measurements List
                     </td>
                     <td>{{ $v->id }}</td>
                     <td>{{ $v->mms_address1 }} {{ $v->mms_address2 }}, {{ $v->mms_locality }}, {{ $v->mms_town }}, {{ $v->mms_city }} {{ $v->mms_state_code }} {{ $v->mms_zip }}</td>
-                    <td>{{ $v->mms_lawn_area }}</td>
-                    <td>{{ $v->mms_roof_area }}</td>
+
+                    <td>{{ $v->mms_property_size }} @if($v->mms_property_size_unit) sqft @else sqm @endif</td>
+                    <td>{{ $v->mms_house_size }} @if($v->mms_house_size_unit) sqft @else sqm @endif</td>
+                    <td>{{ $v->mms_paved_area }} @if($v->mms_paved_area_unit) sqft @else sqm @endif</td>
+                    <td>{{ $v->mms_planting_area }} @if($v->mms_planting_area_unit) sqft @else sqm @endif</td>
+                    <td>{{ $v->mms_lawn_area }} @if($v->mms_lawn_area_unit) sqft @else sqm @endif</td>
+                    <td>{{ $v->mms_roof_area }} @if($v->mms_roof_area_unit) sqft @else sqm @endif</td>
                     <td>{{ $v->mms_roof_pitch }}</td>
-                    <td>{{ $v->mms_roof_perimeter }}</td>
-                    <td>{{ $v->mms_driveway_area }}</td>
+                    <td>{{ $v->mms_roof_perimeter }} @if($v->mms_roof_perimeter_unit) sqft @else sqm @endif</td>
+                    <td>{{ $v->mms_driveway_area }} @if($v->mms_driveway_area_unit) sqft @else sqm @endif</td>
                     <td>
                       @if($v->mms_fence == 1)
                       <div class="badge badge-success fw-bold">Yes</div>
@@ -167,7 +179,10 @@ Measurements List
                       <div class="badge badge-danger fw-bold">No</div>
                       @endif
                     </td>
+                    <td>{{ $v->mms_front_width }} @if($v->mms_front_width_unit) sqft @else sqm @endif</td>
                     <td>{{ $v->mms_stories_num }}</td>
+                    <td><a href="/uploaded_file/{{ $v->mms_img_front }}"><img src="/uploaded_file/{{ $v->mms_img_front }}" alt="Property Image" width="100" height="100"></a></td>
+                    <td><a href="/uploaded_file/{{ $v->mms_img_satellite }}"><img src="/uploaded_file/{{ $v->mms_img_satellite }}" alt="Property Image" width="100" height="100"></a></td>
                     <td><a href="/uploaded_file/{{ $v->mms_img }}"><img src="/uploaded_file/{{ $v->mms_img }}" alt="Property Image" width="100" height="100"></a></td>                    
                     <td>{{ $v->mms_entered_by_user }}</td>
                     <td>{{ \Carbon\Carbon::parse($v->mms_entered_at)->format('d/m/Y')}}</td>

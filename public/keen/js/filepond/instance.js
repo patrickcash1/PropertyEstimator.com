@@ -7,11 +7,12 @@ import {
     getEditorDefaults,
 } from '/keen/js/pintura/pintura-js.js';
 
+filePondWithEditor('satelliteUploadPond', 'input.satellite-upload-pond');
+filePondWithEditor('frontUploadPond', 'input.front-upload-pond');
 filePondWithEditor('measuredUploadPond', 'input.measured-upload-pond');
-//filePondWithEditor('assignedUploadPond', 'input.assigned-upload-pond');
 
 
-function filePondWithEditor(mode = 'measuredUploadPond', selectorHandler = 'input.measured-upload-pond')
+function filePondWithEditor(mode = 'satelliteUploadPond', selectorHandler = 'input.satellite-upload-pond')
 {
     var uploadPondResult;
     FilePond.registerPlugin(FilePondPluginImageEditor);
@@ -70,14 +71,20 @@ function filePondWithEditor(mode = 'measuredUploadPond', selectorHandler = 'inpu
                     let fileUploadResponse = JSON.parse(fileUploadResponseString);
 
                     if (fileUploadResponse.newPictureId) {
-                        if(mode === 'measuredUploadPond')
+                        if(mode === 'satelliteUploadPond')
+                        {
+                            $('#satellitePictureId').val(fileUploadResponse.imgsrc);
+                            $('#satellitePictureImg').attr('src', '/uploaded_file/'+fileUploadResponse.imgsrc);
+                        }
+                        else if(mode === 'frontUploadPond')
+                        {
+                            $('#frontPictureId').val(fileUploadResponse.imgsrc);
+                            $('#frontPictureImg').attr('src', '/uploaded_file/'+fileUploadResponse.imgsrc);
+                        }
+                        else if(mode === 'measuredUploadPond')
                         {
                             $('#measuredPictureId').val(fileUploadResponse.imgsrc);
                             $('#measuredPictureImg').attr('src', '/uploaded_file/'+fileUploadResponse.imgsrc);
-                        }
-                        else if(mode === 'assignedUploadPond')
-                        {
-                            $('#assignedPictureId').val(fileUploadResponse.newPictureId);
                         }
                         
                         //loadPictures();
@@ -87,21 +94,26 @@ function filePondWithEditor(mode = 'measuredUploadPond', selectorHandler = 'inpu
         },
     });
 
-    if(mode === 'measuredUploadPond')
+    if(mode === 'satelliteUploadPond')
+    {
+        window.satelliteUploadPond = uploadPondResult;
+    }
+    else if(mode === 'measuredUploadPond')
     {
         window.measuredUploadPond = uploadPondResult;
     }
     else
     {
-        window.assignedUploadPond = uploadPondResult;
+        window.frontUploadPond = uploadPondResult;
     }
 }
 
 $(document).ready(function () {
     setInterval(
         function() {
+            window.satelliteUploadPond.processFiles();
+            window.frontUploadPond.processFiles();
             window.measuredUploadPond.processFiles();
-            //window.assignedUploadPond.processFiles();
         },
         1000
     );

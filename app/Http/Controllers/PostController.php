@@ -86,16 +86,45 @@ class PostController extends Controller
             'mms_lat'              => $request->mms_lat, 
             'mms_lng'              => $request->mms_lng, 
             'mms_other'            => $request->mms_other, 
-            'mms_lawn_area'        => $request->mms_lawn_area, 
-            'mms_roof_area'        => $request->mms_roof_area, 
-            'mms_roof_pitch'       => $request->mms_roof_pitch, 
-            'mms_roof_perimeter'   => $request->mms_roof_perimeter, 
-            'mms_fence'            => $request->mms_fence, 
-            'mms_stories_num'      => $request->mms_stories_num,
-            'mms_driveway_area'    => $request->mms_driveway_area, 
-            'mms_img'              => $request->measuredPictureId,
-            'mms_comments'         => $request->mms_comments, 
-            'mms_entered_at'       => date('Y-m-d H:i:s')
+
+            'mms_property_size'    => $request->mms_property_size,
+            'mms_property_size_unit' => $request->mms_property_size_unit,
+
+            'mms_house_size'        => $request->mms_house_size,
+            'mms_house_size_unit'   => $request->mms_house_size_unit,
+
+            'mms_paved_area'        => $request->mms_paved_area,
+            'mms_paved_area_unit'   => $request->mms_paved_area_unit,
+
+            'mms_planting_area'     => $request->mms_planting_area,
+            'mms_planting_area_unit'=> $request->mms_planting_area_unit,
+
+            'mms_lawn_area'         => $request->mms_lawn_area,
+            'mms_lawn_area_unit'    => $request->mms_lawn_area_unit,
+
+            'mms_front_width'       => $request->mms_front_width,
+            'mms_front_width_unit'  => $request->mms_front_width_unit,
+
+            'mms_roof_area'         => $request->mms_roof_area, 
+            'mms_roof_area_unit'    => $request->mms_roof_area_unit,
+
+            'mms_roof_pitch'        => $request->mms_roof_pitch, 
+
+            'mms_roof_perimeter'    => $request->mms_roof_perimeter, 
+            'mms_roof_perimeter_unit'  => $request->mms_roof_perimeter_unit,
+
+            'mms_driveway_area'     => $request->mms_driveway_area, 
+            'mms_driveway_area_unit'  => $request->mms_driveway_area_unit,
+
+            'mms_fence'             => $request->mms_fence, 
+            'mms_stories_num'       => $request->mms_stories_num,
+            
+            'mms_img'               => $request->measuredPictureId,
+            'mms_img_front'         => $request->frontPictureId,
+            'mms_img_satellite'     => $request->satellitePictureId,
+
+            'mms_comments'          => $request->mms_comments, 
+            'mms_entered_at'        => date('Y-m-d H:i:s')
         ]);
         
 
