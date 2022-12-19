@@ -40,7 +40,7 @@ Add New Worker
       </div>
       <div class="col-6 mb-10">
         <label for="pay_rate" class="required form-label">Worker's Pay Rate</label>
-        <input type="number" name="pay_rate" class="form-control form-control-solid" value="0.20"/>
+        <input type="text" name="pay_rate" class="form-control form-control-solid" placeholder="0.20"/>
       </div>
     </div>
   </div>
