@@ -22,7 +22,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item p-0 m-0">
                                     <!--begin:Menu link-->
-                                    <a href="/view-jobs" class="menu-link">
+                                    <a href="/tasks-list" class="menu-link">
                                         <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
                                             <!--begin::Svg Icon | path: icons/duotune/graphs/gra001.svg-->
                                             <span class="svg-icon svg-icon-dark svg-icon-1">
@@ -34,8 +34,8 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <span class="d-flex flex-column">
-                                            <span class="fs-6 fw-semibold text-gray-800">Jobs</span>
-                                            <span class="fs-7 fw-semibold text-muted">Assined Jobs</span>
+                                            <span class="fs-6 fw-semibold text-gray-800">Tasks</span>
+                                            <span class="fs-7 fw-semibold text-muted">Tasks Assigned</span>
                                         </span>
                                     </a>
                                     <!--end:Menu link-->

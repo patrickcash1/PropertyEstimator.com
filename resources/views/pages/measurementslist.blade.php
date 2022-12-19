@@ -161,7 +161,7 @@ Measurements List
                       </div>
                     </td>
                     <td>{{ $v->id }}</td>
-                    <td>{{ $v->mms_address1 }} {{ $v->mms_address2 }}, {{ $v->mms_locality }}, {{ $v->mms_town }}, {{ $v->mms_city }} {{ $v->mms_state_code }} {{ $v->mms_zip }}</td>
+                    <td>{{ $v->mms_address1 }} {{ $v->mms_address2 }}, {{ $v->mms_city }} {{ $v->mms_state_code }} {{ $v->mms_zip }}</td>
 
                     <td>{{ $v->mms_property_size }} @if($v->mms_property_size_unit) sqft @else sqm @endif</td>
                     <td>{{ $v->mms_house_size }} @if($v->mms_house_size_unit) sqft @else sqm @endif</td>

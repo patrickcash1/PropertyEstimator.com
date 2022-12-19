@@ -38,39 +38,29 @@ Add Property Measurement
     </div>
     <div class="row mb-6">
       <div class="col-2 mb-10">
-        <label for="mms_locality" class="form-label">Locality</label>
-        <input type="teaxt" name="mms_locality" class="form-control form-control-solid" placeholder="Enter locality (if any)" />
-      </div>
-      <div class="col-2 mb-10">
-        <label for="mms_town" class="form-label">Town</label>
-        <input type="teaxt" name="mms_town" class="form-control form-control-solid" placeholder="Enter town (if any)" />
-      </div>
-      <div class="col-2 mb-10">
         <label for="mms_city" class="required form-label">City</label>
         <input type="teaxt" name="mms_city" class="form-control form-control-solid" placeholder="Enter city name" />
       </div>
-      <div class="col-3 mb-10">
+      <div class="col-2 mb-10">
         <label for="mms_state" class="required form-label">State</label>
         <select name="mms_state" class="form-select form-select-solid" data-control="select2" data-placeholder="Select State">
           @include('partials.states')
         </select>
       </div>
-      <div class="col-3 mb-10">
+      <div class="col-1 mb-10">
         <label for="mms_zip" class="required form-label">Zip</label>
-        <input type="teaxt" name="mms_zip" class="form-control form-control-solid" placeholder="Enter zip code" />
+        <input type="teaxt" name="mms_zip" class="form-control form-control-solid" placeholder="Enter zip" />
       </div>
-    </div>
-    <div class="row mb-6">
-      <div class="col-3 mb-10">
+      <div class="col-2 mb-10">
         <label for="mms_lat" class="form-label">Latitude (Optional)</label>
         <input type="text" name="mms_lat" class="form-control form-control-solid" />
       </div>
-      <div class="col-3 mb-10">
+      <div class="col-2 mb-10">
         <label for="mms_lng" class="form-label">Longitude (Optional)</label>
         <input type="text" name="mms_lng" class="form-control form-control-solid" />
       </div>
-      <div class="col-6 mb-10">
-        <label for="mms_other" class="form-label">Any Other Address Information (goole maps link etc)</label>
+      <div class="col-3 mb-10">
+        <label for="mms_other" class="form-label">Any Other Info (goole maps link etc)</label>
         <input type="text" name="mms_other" class="form-control form-control-solid" />
       </div>
     </div>
